@@ -81,28 +81,27 @@
                 todoList.innerHTML = template;
             }
 
-            var displayCounter = function(){
+            var displayCounter = function() {
                 var todoCounter = document.getElementById("counter");
                 var counter = todos.length;
                 todoCounter.innerHTML = counter;
-                }
+            }
 
             var addtask = document.getElementById("addtask");
             addtask.addEventListener("click", function(){
                 var newtask = prompt("Add task!", "")
                 if(newtask){
                     todos.push({
-                done: false,
-                todo: newtask,
-            })
+                        done: false,
+                        todo: newtask,
+                    });
                 }
                 render();
                 displayCounter();
-            })
+            });
             
-render();
-displayCounter();
-
+            render();
+            displayCounter();
         </script>
     </body>
 </html>
