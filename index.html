@@ -1,107 +1,23 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>To Do App</title>
-        <style>
-            .frame{
-                width: 500px;
-                margin: auto;
-            }
-            .add-task{
-                width: 40px;
-                font-size: 22px;
-                font-weight: lighter;
-                line-height: 0.8;
-                border-radius: 4px;
-            }
-            .title{
-                color: #4facf2;
-                font-family: sans-serif;
 
-            }
-            .counter{
-                color: #4facf2;
-                float: right;
-                font-family: sans-serif;
-                font-size: 32px;
-                
-            }
-            .list{
-                font-family: sans-serif;
-                list-style: none;
-                padding-left: 0px;
-            }
-            .list li{
-                padding-top: 10px;
-                padding-bottom: 10px;
-                border-bottom: 1px;
-                border-color: lightgray;
-                border-bottom-style: solid;
-            }
+<head>
+    <title>To Do App</title>
+    <link rel="stylesheet" type="text/css" href="index.css">
+</head>
 
-        </style>
-        
-    </head>
-    <body>
-        <div class="frame">
-            <div style="text-align: right;">
-                <button class="add-task" id="addtask">+</button>
-            </div>
-            <div>
-                <span class="counter" id="counter"></span>
-                <h1 class="title">To Do</h1>    
-            </div>
-            <ul class="list" id="list"></ul>
+<body>
+    <div class="frame">
+        <div id="button-area">
+            <button class="add-task" id="addtask">+</button>
         </div>
-        <script>
-            var todos = [{
-                done: true,
-                todo: "Learn HTML",
-            }, {
-                done: false,
-                todo: "Learn CSS",
-                
-            }, {
-                done: false, 
-                todo: "Learn JavaScript",
-                
-            }];
+        <div>
+            <span class="counter" id="counter"></span>
+            <h1 class="title">To Do</h1>
+        </div>
+        <ul class="list" id="list"></ul>
+    </div>
+    <script src="index.js"></script>
+</body>
 
-            var todoList = document.getElementById("list");
-
-            var render = function(){
-                var template = "";
-                for(var x = 0; x < todos.length; x++){
-                    var checked = "";
-                    if(todos[x].done){
-                        checked = "checked";
-                    }
-                    template = template + "<li><input type='checkbox'" + checked +">" + todos[x].todo +"</li>";
-                }
-                todoList.innerHTML = template;
-            }
-
-            var displayCounter = function() {
-                var todoCounter = document.getElementById("counter");
-                var counter = todos.length;
-                todoCounter.innerHTML = counter;
-            }
-
-            var addtask = document.getElementById("addtask");
-            addtask.addEventListener("click", function(){
-                var newtask = prompt("Add task!", "")
-                if(newtask){
-                    todos.push({
-                        done: false,
-                        todo: newtask,
-                    });
-                }
-                render();
-                displayCounter();
-            });
-            
-            render();
-            displayCounter();
-        </script>
-    </body>
 </html>

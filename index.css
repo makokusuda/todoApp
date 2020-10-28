@@ -1,0 +1,42 @@
+.frame {
+  width: 500px;
+  margin: auto;
+}
+
+#button-area {
+  text-align: right;
+}
+
+.add-task {
+  width: 40px;
+  font-size: 22px;
+  font-weight: lighter;
+  line-height: 0.8;
+  border-radius: 4px;
+}
+
+.title {
+  color: #4facf2;
+  font-family: sans-serif;
+}
+
+.counter {
+  color: #4facf2;
+  float: right;
+  font-family: sans-serif;
+  font-size: 32px;
+}
+
+.list {
+  font-family: sans-serif;
+  list-style: none;
+  padding-left: 0px;
+}
+
+.list li {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border-bottom: 1px;
+  border-color: lightgray;
+  border-bottom-style: solid;
+}
